@@ -6,6 +6,15 @@
 
 function cariMean(arr) {
   // you can only write your code here!
+  let jml = 0;
+  for(let x = 0; x < arr.length; x++){
+    jml += arr[x];
+  }
+  let mean = jml / arr.length;
+  if(mean%1 !== 0) {
+    mean = Math.round(mean);
+  }
+  return mean;
 }
 
 // TEST CASES
