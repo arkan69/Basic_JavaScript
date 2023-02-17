@@ -10,6 +10,13 @@
 
 function totalDigitRekursif(angka) {
   // you can only write your code here!
+  let sum = 0;
+  let numString = angka.toString();
+
+  for (let i = 0; i < numString.length; i++) {
+    sum += parseInt(numString[i]);
+  }
+  return sum;
 }
 
 // TEST CASES
