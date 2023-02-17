@@ -6,6 +6,19 @@
 
 function ubahHuruf(kata) {
   // you can only write your code here!
+  let result = '';
+  for (let i = 0; i < kata.length; i++) {
+    let charCode = kata.charCodeAt(i);
+    if (charCode === 122) {
+      // 'z' should be replaced with 'a'
+      charCode = 97;
+    } else {
+      // add 1 to the character code to get the next letter
+      charCode++;
+    }
+    result += String.fromCharCode(charCode);
+  }
+  return result;
 }
 
 // TEST CASES
