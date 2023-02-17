@@ -6,6 +6,16 @@
 
 function pasanganTerbesar(num) {
   // you can only write your code here!
+  strnum = num.toString();
+  let maks = parseInt(strnum.substr(0,2));
+
+  for(let x = 0; x< strnum.length ; x++){
+    let skrg = parseInt(strnum.substr(x,2));
+    if(skrg > maks){
+      maks = skrg;
+    }
+  }
+  return maks;
 }
 
 // TEST CASES
