@@ -6,6 +6,35 @@
 
 function targetTerdekat(arr) {
   // you can only write your code here!
+  var i = 0;
+  var xIndices = [];
+  var oIndex = -1;
+  
+  while (i < arr.length) {
+    if (arr[i] === 'x') {
+      xIndices.push(i);
+    } else if (arr[i] === 'o') {
+      oIndex = i;
+    }
+    i++;
+  }
+  
+  if (oIndex === -1 || xIndices.length === 0) {
+    return 0;
+  }
+  
+  var closestDistance = 1000000;
+  for (i = 0; i < xIndices.length; i++) {
+    var distance = xIndices[i] - oIndex;
+    if (distance < 0) {
+      distance = -distance;
+    }
+    if (distance < closestDistance) {
+      closestDistance = distance;
+    }
+  }
+  
+  return closestDistance;
 }
 
 // TEST CASES
