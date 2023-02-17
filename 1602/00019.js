@@ -12,6 +12,37 @@
 
 function groupAnimals(animals) {
   // you can only write your code here!
+
+  // membuat objek baru untuk menyimpan kelompok hewan
+  const groups = {};
+
+  // looping untuk setiap nama hewan pada array
+  for (let i = 0; i < animals.length; i++) {
+    const animal = animals[i];
+
+    // menagmbil huruf pertama dari nama hewan
+    const firstLetter = animal[0];
+
+    // jika grup untuk nama tertentu belum ada, makan akan dibuat
+    if (!groups[firstLetter]) {
+      groups[firstLetter] = [];
+    }
+
+    // menambahkan nama hewan ke group yang sesuai
+    groups[firstLetter].push(animal);
+  }
+
+  // mengambl kunci dari objek grup dan digolongkan sesuai alfabet
+  const groupKeys = Object.keys(groups).sort();
+
+  // membuat array di dalam array, dimana setiap subarray berisi nama hewan yang dikelompokkan
+  const result = [];
+  for (let i = 0; i < groupKeys.length; i++) {
+    const groupKey = groupKeys[i];
+    result.push(groups[groupKey]);
+  }
+
+  return result;
 }
 
 // TEST CASES
