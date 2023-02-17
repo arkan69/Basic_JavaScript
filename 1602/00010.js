@@ -8,6 +8,16 @@
 
 function angkaPalindrome(num) {
   // you can only write your code here!
+  function cekpalindrome(kal){
+    const balik = kal.split('').reverse().join('');
+    return kal === balik;
+  }
+
+  let lanjut = num+1;
+  while(!cekpalindrome(lanjut.toString())){
+    lanjut++
+  }
+  return lanjut;
 }
 
 // TEST CASES
