@@ -7,6 +7,12 @@
 
 function balikKata(kata) {
   // you can only write your code here!
+  let kataku = '';
+  let a;
+    for (a=0; a < kata.length ; a++){
+    kataku = kata[a] + kataku;
+  }
+  return kataku;
 }
 
 // TEST CASES
