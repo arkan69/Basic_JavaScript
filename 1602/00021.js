@@ -6,6 +6,21 @@
 
 function fpb(angka1, angka2) {
   // you can only write your code here!
+  let divisor = 2;
+  let gcd = 1;
+
+  if (angka1 < 2 || angka2 < 2) {
+    return 1;
+  }
+
+  while (angka1 >= divisor && angka2 >= divisor) {
+    if (angka1 % divisor === 0 && angka2 % divisor === 0) {
+      gcd = divisor;
+    }
+    divisor++;
+  }
+
+  return gcd;
 }
 
 // TEST CASES
