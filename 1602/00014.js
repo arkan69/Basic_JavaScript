@@ -6,6 +6,18 @@
 
 function perkalianUnik(arr) {
   // you can only write your code here!
+  var result = [];
+  
+  for (var i = 0; i < arr.length; i++) {
+    var product = 1;
+    for (var j = 0; j < arr.length; j++) {
+      if (i !== j) {
+        product *= arr[j];
+      }
+    }
+    result.push(product);
+  }
+  return result;
 }
 
 // TEST CASES
