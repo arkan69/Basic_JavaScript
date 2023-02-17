@@ -6,6 +6,17 @@
 
 function urutkanAbjad(str) {
   // you can only write your code here!
+  let letters = str.split('');
+  for(let x = 0; x < letters.length; x++){
+    for(let y=x+1; y < letters.length; y++){
+      if(letters[x] > letters[y]){
+        let tempp = letters[x];
+        letters[x] = letters[y];
+        letters[y] = tempp;
+      }
+    }
+  }
+  return letters.join('');
 }
 
 // TEST CASES
