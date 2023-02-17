@@ -5,6 +5,21 @@
 
 function tukarBesarKecil(kalimat) {
   // you can only write your code here!
+  let result = '';
+  for (let i = 0; i < kalimat.length; i++) {
+    let charCode = kalimat.charCodeAt(i);
+    if (charCode >= 65 && charCode <= 90) {
+      // Uppercase letter
+      result += String.fromCharCode(charCode + 32);
+    } else if (charCode >= 97 && charCode <= 122) {
+      // Lowercase letter
+      result += String.fromCharCode(charCode - 32);
+    } else {
+      // Non-letter character
+      result += kalimat[i];
+    }
+  }
+  return result;
 }
 
 // TEST CASES
