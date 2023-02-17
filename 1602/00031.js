@@ -12,12 +12,36 @@
 // Function countProfit akan mengembalikan/me-return sebuah array of object dimana array tersebut berisi objek-objek barang dari toko X tersebut yang berisikan info nama barang, siapa saja yang membeli, sisa stock barang dan total pemasukan untuk barang tersebut
 
 function countProfit(shoppers) {
+  // you can only write your code here!
   let listBarang = [ ['Sepatu Stacattu', 1500000, 10],
                      ['Baju Zoro', 500000, 2],
                      ['Sweater Uniklooh', 175000, 1]
                    ];
+  
+  let result = [];
 
-  // you can only write your code here!
+  if (shoppers.length === 0) {
+    return result;
+  }
+
+  for (let i = 0; i < listBarang.length; i++) {
+    let product = {
+      product: listBarang[i][0],
+      shoppers: [],
+      leftOver: listBarang[i][2],
+      totalProfit: 0
+    };
+
+    for (let j = 0; j < shoppers.length; j++) {
+      if (shoppers[j].product === listBarang[i][0] && shoppers[j].amount <= product.leftOver) {
+        product.shoppers.push(shoppers[j].name);
+        product.leftOver -= shoppers[j].amount;
+        product.totalProfit += shoppers[j].amount * listBarang[i][1];
+      }
+    }
+    result.push(product);
+  }
+  return result;
 }
 
 // TEST CASES
