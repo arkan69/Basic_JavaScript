@@ -22,6 +22,40 @@
 
 function shoppingTime(memberId, money) {
   // you can only write your code here!
+  if (!memberId) {
+    return "Mohon maaf, toko X hanya berlaku untuk member saja";
+  } else if (money < 50000) {
+    return "Mohon maaf, uang tidak cukup";
+  }
+
+  const produk = [
+    ["Sepatu Stacattu", 1500000],
+    ["Baju Zoro", 500000],
+    ["Baju H&N", 250000],
+    ["Sweater Uniklooh", 175000],
+    ["Casing Handphone", 50000],
+  ];
+
+  let listBeli = [];
+  let changeMoney = money;
+
+  for (let i = 0; i < produk.length; i++) {
+    if (changeMoney >= produk[i][1]) {
+      listBeli.push(produk[i][0]);
+      changeMoney -= produk[i][1];
+    } else {
+      i++;
+    }
+  }
+
+  if (memberId != null && money != null) {
+    return {
+      memberId: memberId,
+      money: money,
+      listBeli: listBeli,
+      changeMoney: changeMoney,
+    };
+  }
 }
 
 // TEST CASES
