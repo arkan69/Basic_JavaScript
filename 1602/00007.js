@@ -5,6 +5,22 @@
 
 function xo(str) {
   // you can only write your code here!
+  let hitungX = 0;
+  let hitungO = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === 'x') {
+      hitungX++;
+    } else if (str[i] === 'o') {
+      hitungO++;
+    }
+  }
+
+  if (hitungX === hitungO) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 // TEST CASES
