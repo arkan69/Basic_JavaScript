@@ -6,6 +6,14 @@
 
 function palindrome(kata) {
   // you can only write your code here!
+  const hapus = kata.replace(/[^0-9a-z]/gi,'').toLowerCase();
+
+  for (let i=0 ; i < hapus.length/2 ;i++){
+    if(hapus[i] !== hapus[hapus.length-1-i]){
+      return false;
+    }
+  }
+  return true;
 }
 
 // TEST CASES
