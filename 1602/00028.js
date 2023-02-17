@@ -6,6 +6,30 @@
 
 function checkAB(num) {
   // you can only write your code here!
+  let aIndex = -1;
+  let bIndex = -1;
+  let distance = 0;
+
+  for (let i = 0; i < num.length; i++) {
+    if (num[i] === 'a') {
+      aIndex = i;
+      if (bIndex !== -1) {
+        distance = aIndex - bIndex;
+      }
+    }
+    else if (num[i] === 'b') {
+      bIndex = i;
+      if (aIndex !== -1) {
+        distance = bIndex - aIndex;
+      }
+    }
+
+    if (distance >= 3) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 // TEST CASES
