@@ -5,6 +5,14 @@
 
 function konversiMenit(menit) {
   // you can only write your code here!
+  let menits = parseInt(menit/60);
+  let seconds = menit%60;
+
+  if(seconds<10){
+    seconds = "0" + seconds;
+  }
+
+  return menits + ":" + seconds;
 }
 
 // TEST CASES
